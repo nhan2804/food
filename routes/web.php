@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\User\CartController;
+use App\Http\Controllers\User\ProductBrandController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +23,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/user', UserController::class);
+Route::resource('/product_brand', ProductBrandController::class);
+Route::resource('/cart', CartController::class);
